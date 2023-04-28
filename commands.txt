@@ -1,0 +1,3 @@
+docker build -t reactkeycloak:dev .
+
+docker run -it -p 3000:3000 reactkeycloak:dev
