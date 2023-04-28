@@ -32,3 +32,18 @@ services:
         - 8085:8080
       depends_on:
         - mysql
+  react-frontend:
+      container_name: reactjs-frontend
+      stdin_open: true
+      build:
+        context: .
+        dockerfile: Dockerfile
+      command: npm run start
+      expose:
+        - 3000
+      ports:
+        - "3000:3000"
+      volumes: 
+          - /app/node_modules
+          - .:/app
+     
